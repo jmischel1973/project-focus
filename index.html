@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Focus - Main Navigation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #1a1a1a;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+            padding-top: 30px;
+        }
+
+        .logo-container {
+            margin-bottom: 30px;
+        }
+
+        .logo-container img {
+            max-width: 300px;
+            height: auto;
+        }
+
+        .header h1 {
+            font-size: 48px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            color: #FDB913;
+        }
+
+        .header p {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .nav-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .nav-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .nav-card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #FDB913;
+        }
+
+        .nav-card-icon {
+            font-size: 36px;
+            margin-right: 15px;
+        }
+
+        .nav-card-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .nav-card-description {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .nav-items {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            background-color: #f8f9fa;
+            border-radius: 6px;
+            text-decoration: none;
+            color: #333;
+            transition: background-color 0.2s, transform 0.2s;
+            border-left: 3px solid transparent;
+        }
+
+        .nav-item:hover {
+            background-color: #e9ecef;
+            transform: translateX(5px);
+        }
+
+        .nav-item.data-entry:hover {
+            border-left-color: #FDB913;
+            background-color: #FFFBF0;
+        }
+
+        .nav-item.reports:hover {
+            border-left-color: #FDB913;
+            background-color: #FFFBF0;
+        }
+
+        .nav-item.ai:hover {
+            border-left-color: #FDB913;
+            background-color: #FFFBF0;
+        }
+
+        .nav-item-icon {
+            font-size: 20px;
+            margin-right: 12px;
+            width: 24px;
+            text-align: center;
+        }
+
+        .nav-item-text {
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .nav-item.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .nav-item.disabled:hover {
+            background-color: #f8f9fa;
+            transform: none;
+            border-left-color: transparent;
+        }
+
+        .coming-soon {
+            font-size: 11px;
+            color: #999;
+            margin-left: auto;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .nav-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header h1 {
+                font-size: 36px;
+            }
+
+            .header p {
+                font-size: 16px;
+            }
+        }
+
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 50px;
+            opacity: 0.8;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo-container">
+            <img src="https://images.squarespace-cdn.com/content/v1/5f723049e0dc5d1f3cd79466/1601410418990-HNRGQL7LZPZB4RVS11AR/VQC_LogoFooter-01.png" alt="Valley Queen Cheese">
+        </div>
+        <h1>Project Focus</h1>
+        <p>Manufacturing Operations Management System</p>
+    </div>
+
+    <div class="container">
+        <div class="nav-grid">
+            
+            <!-- Data Entry Card -->
+            <div class="nav-card data-entry">
+                <div class="nav-card-header">
+                    <div class="nav-card-icon">📝</div>
+                    <div class="nav-card-title">Data Entry</div>
+                </div>
+                <div class="nav-card-description">
+                    Capture daily operational observations and quality control metrics
+                </div>
+                <div class="nav-items">
+                    <a href="magnet_inspection_form.html" class="nav-item data-entry">
+                        <span class="nav-item-icon">🧲</span>
+                        <span class="nav-item-text">Magnet Inspections</span>
+                    </a>
+                    <a href="supervisor_handoff.html" class="nav-item data-entry">
+                        <span class="nav-item-icon">📋</span>
+                        <span class="nav-item-text">Supervisor Handoff Notes</span>
+                    </a>
+                    <a href="#" class="nav-item data-entry disabled">
+                        <span class="nav-item-icon">🌡️</span>
+                        <span class="nav-item-text">Water Silo Monitoring</span>
+                        <span class="coming-soon">Coming Soon</span>
+                    </a>
+                    <a href="#" class="nav-item data-entry disabled">
+                        <span class="nav-item-icon">✅</span>
+                        <span class="nav-item-text">Quality Control Checks</span>
+                        <span class="coming-soon">Coming Soon</span>
+                    </a>
+                    <a href="#" class="nav-item data-entry disabled">
+                        <span class="nav-item-icon">📦</span>
+                        <span class="nav-item-text">Production Log</span>
+                        <span class="coming-soon">Coming Soon</span>
+                    </a>
+                    <a href="#" class="nav-item data-entry disabled">
+                        <span class="nav-item-icon">🔧</span>
+                        <span class="nav-item-text">Equipment Maintenance</span>
+                        <span class="coming-soon">Coming Soon</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Reports and Analysis Card -->
+            <div class="nav-card reports">
+                <div class="nav-card-header">
+                    <div class="nav-card-icon">📊</div>
+                    <div class="nav-card-title">Reports & Analysis</div>
+                </div>
+                <div class="nav-card-description">
+                    View dashboards, trends, and performance analytics
+                </div>
+                <div class="nav-items">
+                    <a href="followup_closure.html" class="nav-item reports">
+                        <span class="nav-item-icon">✅</span>
+                        <span class="nav-item-text">Close Follow-Up Items</span>
+                    </a>
+                    <a href="#" class="nav-item reports" onclick="openPowerBI(); return false;">
+                        <span class="nav-item-icon">📈</span>
+                        <span class="nav-item-text">Supervisor Handoff Dashboard</span>
+                    </a>
+                    <a href="#" class="nav-item reports disabled">
+                        <span class="nav-item-icon">🧲</span>
+                        <span class="nav-item-text">Magnet Inspection Trends</span>
+                        <span class="coming-soon">Coming Soon</span>
+                    </a>
+                    <a href="#" class="nav-item reports disabled">
+                        <span class="nav-item-icon">📉</span>
+                        <span class="nav-item-text">Quality Control Report</span>
+                        <span class="coming-soon">Coming Soon</span>
+                    </a>
+                    <a href="#" class="nav-item reports disabled">
+                        <span class="nav-item-icon">📅</span>
+                        <span class="nav-item-text">Daily Production Summary</span>
+                        <span class="coming-soon">Coming Soon</span>
+                    </a>
+                    <a href="#" class="nav-item reports disabled">
+                        <span class="nav-item-icon">⚡</span>
+                        <span class="nav-item-text">Performance Metrics</span>
+                        <span class="coming-soon">Coming Soon</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- AI Agents Card -->
+            <div class="nav-card ai">
+                <div class="nav-card-header">
+                    <div class="nav-card-icon">🤖</div>
+                    <div class="nav-card-title">AI Agents</div>
+                </div>
+                <div class="nav-card-description">
+                    Intelligent assistants for analysis, predictions, and recommendations
+                </div>
+                <div class="nav-items">
+                    <a href="#" class="nav-item ai disabled">
+                        <span class="nav-item-icon">💬</span>
+                        <span class="nav-item-text">Operations Assistant</span>
+                        <span class="coming-soon">Coming Soon</span>
+                    </a>
+                    <a href="#" class="nav-item ai disabled">
+                        <span class="nav-item-icon">🔍</span>
+                        <span class="nav-item-text">Anomaly Detection</span>
+                        <span class="coming-soon">Coming Soon</span>
+                    </a>
+                    <a href="#" class="nav-item ai disabled">
+                        <span class="nav-item-icon">📊</span>
+                        <span class="nav-item-text">Predictive Analytics</span>
+                        <span class="coming-soon">Coming Soon</span>
+                    </a>
+                    <a href="#" class="nav-item ai disabled">
+                        <span class="nav-item-icon">💡</span>
+                        <span class="nav-item-text">Process Optimizer</span>
+                        <span class="coming-soon">Coming Soon</span>
+                    </a>
+                    <a href="#" class="nav-item ai disabled">
+                        <span class="nav-item-icon">📝</span>
+                        <span class="nav-item-text">Report Generator</span>
+                        <span class="coming-soon">Coming Soon</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Project Focus © 2026 | Manufacturing Operations Management</p>
+    </div>
+
+    <script>
+        // Prevent clicks on disabled items
+        document.querySelectorAll('.nav-item.disabled').forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+            });
+        });
+
+        // Open Power BI Dashboard
+        function openPowerBI() {
+            // TODO: Replace with your actual Power BI dashboard URL
+            const powerBIUrl = 'https://app.powerbi.com/view?r=YOUR_REPORT_ID';
+            
+            // For demo purposes, show an alert
+            alert('Power BI Integration:\n\nWhen connected, this will open your Supervisor Handoff Dashboard in a new window.\n\nYou can embed the Power BI report here or open it in a new tab.\n\nTo set up:\n1. Publish your Power BI report\n2. Get the embed/share URL\n3. Replace the powerBIUrl variable in index.html');
+            
+            // Uncomment this line when you have your Power BI URL:
+            // window.open(powerBIUrl, '_blank');
+        }
+    </script>
+</body>
+</html>
